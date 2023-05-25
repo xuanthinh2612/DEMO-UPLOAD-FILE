@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show upload file Demo</title>
+</head>
+<body>
+<h1>Upload file demo</h1>
+
+<h1>Upload only 1 file</h1>
+<form action="/uploadFile" method="post" enctype="multipart/form-data"  >
+    <label for="file">Click to chose file</label>
+    <input type="file" id="file"  name="file">
+    <br><br>
+    <button type="submit">submit</button>
+</form>
+
+<h1>upload multiple file</h1>
+<form action="/uploadMultiFile" method="post" enctype="multipart/form-data"  >
+    <label for="multiFile">Click to chose file</label>
+    <input type="file" id="multiFile"  name="multiFile" multiple>
+    <br><br>
+    <button type="submit">submit</button>
+</form>
+<h1>upload pdf and merge</h1>
+<form action="/uploadAndMergePdf" method="post" enctype="multipart/form-data"  >
+    <label for="pdfFiles">Click to chose file</label>
+    <input type="file" id="pdfFiles"  name="pdfFiles" multiple accept="application/pdf">
+    <br><br>
+    <button type="submit">submit</button>
+</form>
+
+<h1>upload excel file</h1>
+<input type="file" name="excel">
+<h1>export and download excel file</h1>
+<h1>Download file</h1>
+<h1>Delete file</h1>
+</body>
+</html>

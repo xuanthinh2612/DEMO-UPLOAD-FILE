@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List file</title>
+</head>
+<body>
+<h1><a href="/homePage">HomePage</a></h1>
+
+<h1>List file uploaded</h1>
+
+<table>
+  <thead>
+  <td>No.</td>
+  <td>File Name</td>
+  </thead>
+  <tbody>
+  <tr th:each="fileName, row : ${fileList}">
+    <td th:text="${row.index}"></td>
+    <td th:text="${fileName}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
