@@ -34,7 +34,35 @@
         <button class="btn btn-outline-primary" type="submit">submit</button>
     </form>
 
-    <h1>export and download excel file</h1>
+    <h1>Create csv file</h1>
+    <form action="/createCSV" method="post" enctype="multipart/form-data" th:object="${contact}" >
+        <div class="row">
+            <label class="col-6">phoneNumber</label>
+            <input class="col-6" id="phoneNumber"  name="phoneNumber" multiple accept="application/pdf">
+            <br>
+            <label class="col-6">group</label>
+            <input class="col-6" id="group"  name="group" multiple accept="application/pdf">
+            <br>
+            <label class="col-6">name</label>
+            <input class="col-6" id="name"  name="name" multiple accept="application/pdf">
+            <br>
+            <label class="col-6" >gender</label>
+            <input class="col-6"  id="gender"  name="gender" multiple accept="application/pdf">
+            <br>
+            <label class="col-6" >address</label>
+            <input  class="col-6" id="address"  name="address" multiple accept="application/pdf">
+            <br>
+            <label class="col-6" >dateOfBirth</label>
+            <input class="col-6"  id="dateOfBirth"  name="dateOfBirth" multiple accept="application/pdf">
+            <br>
+            <label class="col-6" >email</label>
+            <input class="col-6"  id="email"  name="email" multiple accept="application/pdf">
+            <br>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">submit</button>
+    </form>
+
+
     <h1>upload excel file</h1>
     <input class="btn btn-outline-primary" type="file" name="excel">
 </div>
