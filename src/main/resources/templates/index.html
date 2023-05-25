@@ -64,7 +64,12 @@
 
 
     <h1>upload excel file</h1>
-    <input class="btn btn-outline-primary" type="file" name="excel">
+    <form action="/readCSV" method="post" enctype="multipart/form-data"  >
+        <label for="file">Click to chose file</label>
+        <input type="file" id="csvFile"  name="csvFile">
+        <br><br>
+        <button class="btn btn-outline-primary" type="submit">submit</button>
+    </form>
 </div>
 
 </body>

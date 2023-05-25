@@ -10,11 +10,8 @@
 <body>
 <div class="container">
   <h1><a href="/homePage">HomePage</a></h1>
-  <h1>Upload file success</h1>
-  <h2>File Name: <span th:text="${fileName}"></span></h2>
-
-  <h5><a th:href="|downloadMergeFile/${fileName}|">download</a></h5>
-  <h5><a th:href="|deleteFile/${fileName}|">Delete This File</a></h5>
+  <h1>Contract Info</h1>
+  <p th:text="${contact.toString()}"></p>
   <hr>
 </div>
 </body>

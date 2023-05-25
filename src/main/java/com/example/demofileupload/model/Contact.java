@@ -20,6 +20,9 @@ public class Contact {
         this.email = email;
     }
 
+    public Contact(){
+    }
+
     public int getPhoneNumber() {
         return phoneNumber;
     }

@@ -182,4 +182,44 @@ public class HomePageDemo {
                 .body(resource);
     }
 
+    @PostMapping("/readCSV")
+    public String readCSVFile(@RequestParam("csvFile") MultipartFile file, Model model) throws IOException {
+
+        String fileName = timestamp.getTime() + file.getOriginalFilename();
+
+        Files.copy(file.getInputStream(), this.root.resolve(fileName));
+
+        File csvFile = new File(this.root.resolve(Objects.requireNonNull(fileName)).toUri());
+
+        Contact contact = new Contact();
+        try {
+            FileReader fileReader = new FileReader(csvFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                contact = splitString(line);
+            }
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("contact",  contact);
+        return "contactInfo";
+    }
+
+    private static Contact splitString(String string) {
+        String[] splitData = string.split(COMMA_DELIMITER);
+        String fullName = splitData[0];
+        int phoneNumber = Integer.parseInt(splitData[1]);
+        String group = splitData[2];
+        String gender = splitData[3];
+        String address = splitData[4];
+        String mail = splitData[5];
+        String dateOfBirth = splitData[6];
+        Contact contact = new Contact( phoneNumber,fullName, group, gender, address, mail, dateOfBirth);
+        return contact;
+    }
+
+
 }
