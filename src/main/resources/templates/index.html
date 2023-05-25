@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Show upload file Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </head>
 <body>
-<h1>Upload file demo</h1>
+<div class="container">
+    <h1>Upload file demo</h1>
 
-<h1>Upload only 1 file</h1>
-<form action="/uploadFile" method="post" enctype="multipart/form-data"  >
-    <label for="file">Click to chose file</label>
-    <input type="file" id="file"  name="file">
-    <br><br>
-    <button type="submit">submit</button>
-</form>
+    <h1>Upload only 1 file</h1>
+    <form action="/uploadFile" method="post" enctype="multipart/form-data"  >
+        <label for="file">Click to chose file</label>
+        <input type="file" id="file"  name="file">
+        <br><br>
+        <button class="btn btn-outline-primary" type="submit">submit</button>
+    </form>
 
-<h1>upload multiple file</h1>
-<form action="/uploadMultiFile" method="post" enctype="multipart/form-data"  >
-    <label for="multiFile">Click to chose file</label>
-    <input type="file" id="multiFile"  name="multiFile" multiple>
-    <br><br>
-    <button type="submit">submit</button>
-</form>
-<h1>upload pdf and merge</h1>
-<form action="/uploadAndMergePdf" method="post" enctype="multipart/form-data"  >
-    <label for="pdfFiles">Click to chose file</label>
-    <input type="file" id="pdfFiles"  name="pdfFiles" multiple accept="application/pdf">
-    <br><br>
-    <button type="submit">submit</button>
-</form>
+    <h1>upload multiple file</h1>
+    <form action="/uploadMultiFile" method="post" enctype="multipart/form-data"  >
+        <label for="multiFile">Click to chose file</label>
+        <input type="file" id="multiFile"  name="multiFile" multiple>
+        <br><br>
+        <button class="btn btn-outline-primary" type="submit">submit</button>
+    </form>
+    <h1>upload pdf and merge</h1>
+    <form action="/uploadAndMergePdf" method="post" enctype="multipart/form-data"  >
+        <label for="pdfFiles">Click to chose file</label>
+        <input type="file" id="pdfFiles"  name="pdfFiles" multiple accept="application/pdf">
+        <br><br>
+        <button class="btn btn-outline-primary" type="submit">submit</button>
+    </form>
 
-<h1>upload excel file</h1>
-<input type="file" name="excel">
-<h1>export and download excel file</h1>
-<h1>Download file</h1>
-<h1>Delete file</h1>
+    <h1>export and download excel file</h1>
+    <h1>upload excel file</h1>
+    <input class="btn btn-outline-primary" type="file" name="excel">
+</div>
+
 </body>
 </html>
